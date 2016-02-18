@@ -50,7 +50,7 @@ app.get('/', function(req, res){
 });
 
 function renderImage(TelegramChatID, Sentence) {
-  var path = __dirname + '/latex2/' + tokenGenerator(10) + '.png';
+  var path = __dirname + '/latex/' + tokenGenerator(10) + '.png';
   var dest = fs.createWriteStream(path);
 
   var render = require("mathmode")(Sentence).pipe(dest);
@@ -60,7 +60,7 @@ function renderImage(TelegramChatID, Sentence) {
 }
 
 function renderDoc(TelegramChatID, Sentence) {
-  var path = __dirname + '/latex2/' + tokenGenerator(10) + '.pdf';
+  var path = __dirname + '/latex/' + tokenGenerator(10) + '.pdf';
   var dest = fs.createWriteStream(path);
 
   var render = require("latex")(Sentence).pipe(dest)

@@ -11,7 +11,7 @@
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.3",
-    "http": "0.0.0",
+    "https": "^1.0.0",
     "latex": "0.0.1",
     "mathmode": "0.0.4",
     "request": "^2.69.0"

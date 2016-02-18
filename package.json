@@ -1,0 +1,19 @@
+{
+  "name": "LatexBot",
+  "version": "3.0.0",
+  "description": "NodeJS LatexBot for Telegram",
+  "author": "Luigi Freitas <luigifcruz@me.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "latex": "0.0.1",
+    "mathmode": "0.0.4",
+    "request": "^2.69.0"
+  }
+}

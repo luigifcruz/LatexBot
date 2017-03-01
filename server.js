@@ -31,6 +31,11 @@ app.post('/LatexBot', function(req, res){
       reply(TelegramChatID, "The LatexBot Source Code is available at [GitHub](https://github.com/luigifreitas/LatexBot). Created by @luigifreitas :D");
     } else {
       if (sentence) {
+        if (sentence.match(/\input{(.*?)\}/g)){
+            // Blacklist Commands
+            reply(TelegramChatID, "Command not available.");
+            return;
+        }
         if (command == "/convert" || command == "/convert@LatexBot") {
           renderImage(TelegramChatID, sentence);
         } else if (command == "/convertDoc" || command == "/convertDoc@LatexBot") {

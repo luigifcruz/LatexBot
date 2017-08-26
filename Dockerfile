@@ -1,18 +1,13 @@
-FROM node:argon
+FROM node:boron
 
-# Create app directory
-RUN mkdir -p /usr/src/bot
-WORKDIR /usr/src/bot
+WORKDIR /usr/src/app
 
-# Install app dependencies
-COPY package.json /usr/src/bot/
+COPY package.json .
+
 RUN apt-get update
 RUN apt-get -y install texlive texlive-latex-extra imagemagick
 RUN npm install
 
+COPY . .
 
-# Bundle app source
-COPY . /usr/src/bot
-
-EXPOSE 16000
 CMD [ "npm", "start" ]

@@ -1,15 +1,12 @@
 var express = require('express'),
 app = express(),
 fs = require('fs'),
-http = require('https'),
+http = require('http'),
 request = require('request'),
 bodyParser = require('body-parser'),
 cookieParser = require('cookie-parser');
 
-var server = http.createServer({
-  key: fs.readFileSync(__dirname + '/cert/key.pem'),
-  cert: fs.readFileSync(__dirname + '/cert/cert.pem')
-}, app).listen(16000);
+var server = http.createServer(app).listen(16000);
 
 var BOT_AUTH = "";
 

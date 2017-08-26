@@ -1,5 +1,6 @@
 FROM node:boron
 
+RUN mkdir -p /usr/src/app/latex
 WORKDIR /usr/src/app
 
 COPY package.json .

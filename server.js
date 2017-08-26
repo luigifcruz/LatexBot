@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/LatexBot', function(req, res){
+app.post('/webhook', function(req, res){
   res.send("Thanks!");
   if (req.body.message.text != undefined) {
     var TelegramChatID = req.body.message.chat.id;
@@ -47,8 +47,8 @@ app.post('/LatexBot', function(req, res){
   }
 });
 
-app.get('/', function(req, res){
-  res.send("LatexBot Up!")
+app.get('/status', function(req, res){
+  res.send("✅ LatexBot is up!")
 });
 
 function renderImage(TelegramChatID, Sentence) {
